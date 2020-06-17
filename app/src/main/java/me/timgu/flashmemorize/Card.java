@@ -21,6 +21,7 @@ public class Card implements Serializable {
     public int timesCorrect = 0;
     public int viewed = 0;
 
+
     private String front;
     private String back;
     private int id ;
