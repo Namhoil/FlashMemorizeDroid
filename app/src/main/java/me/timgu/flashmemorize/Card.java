@@ -28,6 +28,7 @@ public class Card implements Serializable {
     private boolean front_pic_exist = false;
     private boolean back_pic_exist = false;
 
+
     private SerialBitmap front_pic;
     private SerialBitmap back_pic;
 
