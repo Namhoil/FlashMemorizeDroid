@@ -14,7 +14,7 @@ import java.io.File;
 public class ImageViewActivity extends AppCompatActivity {
 //Code inspired from https://medium.com/quick-code/pinch-to-zoom-with-multi-touch-gestures-in-android-d6392e4bf52d
 
-    private ScaleGestureDetector mScaleDetector;
+    private ScaleGestureDetector mScaleDetector;//ピンチイン、ピンチアウトを認識
     private float mScaleFactor = 1.0f;
     private ImageView mImageView;
 
@@ -34,14 +34,14 @@ public class ImageViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_view);
 
-        Intent intent = getIntent();
-        File imageFile = new File(getCacheDir(), intent.getStringExtra("image"));
-        SerialBitmap pic = new SerialBitmap(imageFile);
-        PhotoView photoView = (PhotoView) findViewById(R.id.imageView_photoView);
-        photoView.setImageBitmap(pic.bitmap);
+        Intent intent = getIntent();//インテントを使って別のアクティビティから渡されたデータを受け取る
+        File imageFile = new File(getCacheDir(), intent.getStringExtra("image"));//imageという名前でキャッシュファイル作成
+        SerialBitmap pic = new SerialBitmap(imageFile);//イメージファイルのデータを読み込み画像作成
+        PhotoView photoView = (PhotoView) findViewById(R.id.imageView_photoView);//指定されたidのimageviewを使用
+        photoView.setImageBitmap(pic.bitmap);//表示する画像を指定（変換したbitmapをレイアウトエディタにセットしたphotoviewにセット）
 
         //clearing cache
         LocalDecksManager ldm = new LocalDecksManager(this);
-        ldm.clearCache();
+        ldm.clearCache();//キャッシュファイルを削除
     }
 }
