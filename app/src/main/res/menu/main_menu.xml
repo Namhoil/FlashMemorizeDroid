@@ -11,14 +11,14 @@
             <item
                 android:id="@+id/menu_main_edit_delete"
                 android:onClick="editDeckList"
-                android:title="@string/menu_main_edit_delete"
+                android:title="덱 편집(삭제)"
                 app:showAsAction="ifRoom|withText">
 
             </item>
             <item
                 android:id="@+id/menu_main_new_deck"
                 android:onClick="newDeck"
-                android:title="New Empty Deck"
+                android:title="세로운 덱 생성"
                 app:showAsAction="ifRoom|withText">
 
             </item>
@@ -32,21 +32,21 @@
             <item
                 android:id="@+id/menu_rename_deck"
                 android:onClick="renameDeck"
-                android:title="Rename Deck"
+                android:title="덱 이름 편집"
                 app:showAsAction="ifRoom|withText">
 
             </item>
             <item
                 android:id="@+id/menu_merge_decks"
                 android:onClick="mergeDecks"
-                android:title="Merge Decks"
+                android:title="덱 통합"
                 app:showAsAction="ifRoom|withText">
 
             </item>
             <item
                 android:id="@+id/menu_settings"
                 android:onClick = "LaunchSettings"
-                android:title="Settings"
+                android:title="설정"
                 app:showAsAction="ifRoom|withText">
 
             </item>

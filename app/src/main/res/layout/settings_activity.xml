@@ -12,7 +12,7 @@
             android:orientation="vertical">
 
             <androidx.appcompat.widget.Toolbar
-                app:title="Settings"
+                app:title="설정"
                 android:id="@+id/toolbar_settings"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"

@@ -15,9 +15,13 @@ import android.os.Bundle;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.Toolbar;
+
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -47,11 +51,31 @@ public class MainActivity extends AppCompatActivity
     //Declare reference constants
     private boolean editMode = true;
 
+    // 검색할 단어를 EditText UI에서부터 읽어오기 위한 변수
+    private EditText searchText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        searchText = (EditText) findViewById(R.id.editSearch);
+
+        searchText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                String stext = searchText.getText().toString();
+                mAdapter.searchDeckList(stext);
+            }
+        });
 
         //initialize helper classes
         mSettingsManager = new SettingsManager(this);
