@@ -205,4 +205,29 @@ public class MainListAdapter extends
         this.mDeckListValues= new ArrayList<>(deckList.values());
         this.notifyDataSetChanged();//can be more specific, but this is safest
     }
+
+    public void searchDeckList(String searchWord){
+        LocalDecksManager ldm = new LocalDecksManager(context);
+        List<String> KList = new ArrayList<>();
+        List<Object> VList = new ArrayList<>();
+        if (searchWord.length() == 0) {
+            updateDeckList();
+            return;
+        }else{
+            // 리스트의 모든 데이터를 검색한다.
+            for(int i = 0;i < mDeckListKeys.size(); i++)
+            {
+                // arraylist의 모든 데이터에 입력받은 단어가 포함되어 있으면 true를 반환한다.
+                if (mDeckListKeys.get(i).toLowerCase().contains(searchWord))
+                {
+                    // 검색된 데이터를 리스트에 추가한다.
+                    KList.add(mDeckListKeys.get(i));
+                    VList.add(mDeckListValues.get(i));
+                }
+            }
+            this.mDeckListKeys = new ArrayList<>(KList);
+            this.mDeckListValues = new ArrayList<>(VList);
+        }
+        this.notifyDataSetChanged();
+    }
 }
