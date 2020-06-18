@@ -207,7 +207,7 @@ public class MainListAdapter extends
     }
 
     public void searchDeckList(String searchWord){
-        LocalDecksManager ldm = new LocalDecksManager(context);
+       // LocalDecksManager ldm = new LocalDecksManager(context);
         List<String> KList = new ArrayList<>();
         List<Object> VList = new ArrayList<>();
         if (searchWord.length() == 0) {

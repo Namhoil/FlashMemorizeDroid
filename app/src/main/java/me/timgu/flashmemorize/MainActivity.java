@@ -5,6 +5,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
 import androidx.core.app.ActivityCompat;
@@ -22,12 +24,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import org.json.JSONException;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity
@@ -294,6 +298,21 @@ public class MainActivity extends AppCompatActivity
 
     public void renameDeck(MenuItem item) {
         mAdapter.setRenameMode(! mAdapter.getRenameMode());
+    }
+
+    public void help1(MenuItem item){
+        Intent intent = new Intent(getContext(), ImageViewActivity.class);//ロングタップした時の内容をインテントに渡し
+        InputStream inputStream= null;
+        try {
+            inputStream = getAssets().open("image01.jpg");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Bitmap pic=BitmapFactory.decodeStream(inputStream);
+        LocalDecksManager ldm = new LocalDecksManager(getContext());//ファイルネームを与えるためにオブジェクト生成
+        String filename = ldm.saveImageToCache(pic);//画像ファイルデータを取り出す
+        intent.putExtra("image",filename);
+        getContext().startActivity(intent);
     }
 
 

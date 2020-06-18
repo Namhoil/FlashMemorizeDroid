@@ -125,10 +125,10 @@ public class FlashcardActivity extends AppCompatActivity
                 flipCard();
             }
         });
-        mImage_display.setOnTouchListener(new OnSwipeTouchListener(FlashcardActivity.this) {
+        mImage_display.setOnTouchListener(new OnSwipeTouchListener(FlashcardActivity.this) {//imageをタップした時の動作、タッチされた時の動作の内容をまとめたクラスを生成
             public void onSwipeRight() {
                 prevCard();
-            }
+            }//メソッドを再定義している
             public void onSwipeLeft() {
                 nextCard();
             }
@@ -136,12 +136,12 @@ public class FlashcardActivity extends AppCompatActivity
                 flipCard();
             }
             public void onLongTap() {
-                Intent intent = new Intent(getContext(), ImageViewActivity.class);
-                Bitmap pic = mCards.get(mCurrentCard).showImage();
-                LocalDecksManager ldm = new LocalDecksManager(getContext());
-                String filename = ldm.saveImageToCache(pic);
+                Intent intent = new Intent(getContext(), ImageViewActivity.class);//ロングタップした時の内容をインテントに渡し
+                Bitmap pic = mCards.get(mCurrentCard).showImage();//ｍCurrentCard（現在表示中の）image（bitmap）をpicに渡す
+                LocalDecksManager ldm = new LocalDecksManager(getContext());//ファイルネームを与えるためにオブジェクト生成
+                String filename = ldm.saveImageToCache(pic);//画像ファイルデータを取り出す
                 intent.putExtra("image",filename);
-                getContext().startActivity(intent);}
+                getContext().startActivity(intent);}//ImageViewActivityにデータが渡される
         });
 
 

@@ -50,6 +50,14 @@
                 app:showAsAction="ifRoom|withText">
 
             </item>
+            <item
+                android:id="@+id/menu_help1"
+                android:onClick="help1"
+                android:title="help"
+                app:showAsAction="ifRoom|withText">
+
+            </item>
+
 
 
 
