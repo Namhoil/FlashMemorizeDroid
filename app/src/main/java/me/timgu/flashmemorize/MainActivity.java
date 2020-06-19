@@ -301,7 +301,12 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void help1(MenuItem item){
-        Intent intent = new Intent(getContext(), ImageViewActivity.class);//ロングタップした時の内容をインテントに渡し
+
+        Intent intent= new Intent(getContext(),HelpVideo.class);
+        startActivity(intent);
+
+
+        /*Intent intent = new Intent(getContext(), ImageViewActivity.class);
         InputStream inputStream= null;
         try {
             inputStream = getAssets().open("image01.jpg");
@@ -312,8 +317,10 @@ public class MainActivity extends AppCompatActivity
         LocalDecksManager ldm = new LocalDecksManager(getContext());//ファイルネームを与えるためにオブジェクト生成
         String filename = ldm.saveImageToCache(pic);//画像ファイルデータを取り出す
         intent.putExtra("image",filename);
-        getContext().startActivity(intent);
+        getContext().startActivity(intent);*/
     }
+
+
 
 
     @Override
