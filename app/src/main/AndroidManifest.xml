@@ -41,6 +41,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".notificationActivity"/>
+
         <meta-data
             android:name="com.google.android.actions"
             android:resource="@xml/files_paths" />
