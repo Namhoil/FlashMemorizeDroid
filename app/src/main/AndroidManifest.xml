@@ -41,7 +41,19 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".notificationActivity"/>
+        <activity android:name=".NotiMainActivity"/>
+        <activity android:name=".AddEditAlarmActivity"/>
+        <activity
+            android:name=".AlarmLandingPageActivity"
+            android:theme="@style/AlertLandingPageTheme" />
+
+        <service android:name=".LoadAlarmsService" />
+
+        <receiver android:name=".LoadAlarmsReceiver" />
+
+        <receiver android:name=".AlarmReceiver" />
+
+        <receiver android:name=".BootReceiver" android:enabled="true" android:exported="true"/>
 
         <meta-data
             android:name="com.google.android.actions"
