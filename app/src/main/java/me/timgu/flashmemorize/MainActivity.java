@@ -373,11 +373,10 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void notiSettings(MenuItem item) {
-        Intent intent = new Intent (getContext(), notificationActivity.class);
+        Intent intent = new Intent (getContext(), NotiMainActivity.class);
         startActivity(intent);
+
     }
-
-
 }
 
 

@@ -15,9 +15,9 @@ public class HelpVideo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_help_video);
-        final VideoView videoView=(VideoView)findViewById(R.id.videoView);
-        videoView.setVideoURI(Uri.parse("android.resource://"+this.getPackageName()+"/"+R.raw.video1));
-        videoView.start();
+        //final VideoView videoView=(VideoView)findViewById(R.id.videoView);
+        //videoView.setVideoURI(Uri.parse("android.resource://"+this.getPackageName()+"/"+R.raw.video1));
+        //videoView.start();
 
         Button butpre, butnext;
         final ViewFlipper viewFlipper;
