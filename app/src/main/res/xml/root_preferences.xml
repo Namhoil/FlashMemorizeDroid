@@ -28,17 +28,4 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory app:title="통지(알람기능)">
-
-        <ListPreference
-            app:defaultValue="3"
-            app:entries="@array/card_appearance_rate_entries"
-            app:entryValues="@array/card_appearance_rate_values"
-            app:key="card_appearance_rate"
-            app:title="Card Appearance Rate (Smart Learn)"
-            app:useSimpleSummaryProvider="true" />
-
-
-    </PreferenceCategory>
-
 </PreferenceScreen>
