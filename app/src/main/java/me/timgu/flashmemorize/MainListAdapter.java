@@ -218,7 +218,7 @@ public class MainListAdapter extends
             for(int i = 0;i < mDeckListKeys.size(); i++)
             {
                 // arraylist의 모든 데이터에 입력받은 단어가 포함되어 있으면 true를 반환한다.
-                if (mDeckListKeys.get(i).toLowerCase().contains(searchWord))
+                if (mDeckListKeys.get(i).contains(searchWord))
                 {
                     // 검색된 데이터를 리스트에 추가한다.
                     KList.add(mDeckListKeys.get(i));
