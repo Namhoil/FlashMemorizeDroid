@@ -163,6 +163,8 @@ public class FlashcardActivity extends AppCompatActivity
 
         mCards = mDeck.getDeck();
 
+
+
         //initialize
 
         showCard();
@@ -170,6 +172,8 @@ public class FlashcardActivity extends AppCompatActivity
         mCanvas.setTextSize(
                 TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,mSettingsManager.getFontSize(),
                         getResources().getDisplayMetrics()));
+
+
     }
 
     @Override
@@ -624,6 +628,11 @@ public class FlashcardActivity extends AppCompatActivity
         startActivityForResult(intent,MERGE_LIST_REQUEST_CODE);
     }
 
+    public void help2(MenuItem item){
+        Intent intent=new Intent(getContext(),help_view.class);
+        startActivity(intent);
+    }
+
     private Context getActivityContext(){
         return (Context) this;
     }
@@ -666,4 +675,5 @@ public class FlashcardActivity extends AppCompatActivity
             }
         }
     }
+
 }

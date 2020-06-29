@@ -7,8 +7,8 @@ import android.provider.Settings;
 import androidx.preference.PreferenceManager;
 
 public class SettingsManager {
-    private Context mContext;
-    private SharedPreferences mSettings;
+    private Context mContext,mContext2;
+    private SharedPreferences mSettings,mSettings2;
 
 
     //Here contains a list of modifiable default vals
@@ -17,7 +17,9 @@ public class SettingsManager {
 
     public SettingsManager(Context context){
         mContext = context;
+        mContext2=context;
         mSettings = PreferenceManager.getDefaultSharedPreferences(mContext);
+        mSettings2=PreferenceManager.getDefaultSharedPreferences(mContext2);
     }
 
 
@@ -27,9 +29,14 @@ public class SettingsManager {
         mSettings.edit().putBoolean("first_time_launch", false).apply();
     }
 
+    public void setFirstTime2(){
+        mSettings2.edit().putBoolean("first_time_launch",false).apply();
+    }
+
     public Boolean getFirstTime(){
        return  mSettings.getBoolean("first_time_launch",true);
     }
+    public Boolean getFirstTime2(){return  mSettings2.getBoolean("first_time_launch",true);}
 
     public void setFontSize(int size){
         mSettings.edit().putInt("font_size", size).apply();
@@ -42,4 +49,6 @@ public class SettingsManager {
     public double getAppearanceRate(){
         return Double.valueOf(mSettings.getString("card_appearance_rate", "0.1"));
     }
+
+
 }

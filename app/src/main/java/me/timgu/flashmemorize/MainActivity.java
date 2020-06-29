@@ -302,7 +302,7 @@ public class MainActivity extends AppCompatActivity
 
     public void help1(MenuItem item){
 
-        Intent intent= new Intent(getContext(),HelpVideo.class);
+        Intent intent= new Intent(getContext(),help_view.class);
         startActivity(intent);
 
 
@@ -319,8 +319,6 @@ public class MainActivity extends AppCompatActivity
         intent.putExtra("image",filename);
         getContext().startActivity(intent);*/
     }
-
-
 
 
     @Override
@@ -363,7 +361,10 @@ public class MainActivity extends AppCompatActivity
     private void check_n_load_tutorial(){
         if (mSettingsManager.getFirstTime()){
             mDecksManager.LoadTutorialDeck();
-            mSettingsManager.setFirstTime();
+            //ここにヘルプページへのインンテントを渡す
+            Intent intent =new Intent(getContext(),HelpVideo.class);
+            startActivity(intent);
+            //mSettingsManager.setFirstTime();
         }
     }
 
