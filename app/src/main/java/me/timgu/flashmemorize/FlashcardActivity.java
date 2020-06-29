@@ -419,17 +419,17 @@ public class FlashcardActivity extends AppCompatActivity
                  stats_popup.findViewById(R.id.flashcard_stats_popup_text);
 
         String card_accuracy =
-                "Current Card Accuracy: "+ (int)(mCards.get(mCurrentCard).getStats()
+                "현재 카드 정답율: "+ (int)(mCards.get(mCurrentCard).getStats()
                         * 100) + "%";
         String card_times_studied =
-                "Current Card Times Studied: "+ mCards.get(mCurrentCard).timesStudied;
+                "현재 카드 학습 횟수: "+ mCards.get(mCurrentCard).timesStudied;
         String card_times_correct =
-                "Current Card Times Correct: "+mCards.get(mCurrentCard).timesCorrect;
+                "현재 카드 정답(Good) 횟수: "+mCards.get(mCurrentCard).timesCorrect;
         double[] deck_stats = mDeck.getDeckStats();
         String deck_accuracy =
-                "Deck Overall Accuracy: "+(int)(deck_stats[0] * 100) + "%";
+                "현재 덱 전체 정답율: "+(int)(deck_stats[0] * 100) + "%";
         String deck_total_studied  =
-                "Deck Total Times Studied: " + (int) deck_stats[1];
+                "현재 덱 전체 학습 횟수: " + (int) deck_stats[1];
         String deck_total_viewed =
                 "Unique Cards Viewed After Shuffle: "+(int) deck_stats[2]
                         + "/" + mDeck.getSize(false);
