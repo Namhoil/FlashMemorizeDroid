@@ -13,6 +13,8 @@ import android.widget.ViewFlipper;
 public class HelpVideo extends AppCompatActivity {
 
     private SettingsManager settingsManager;
+    VideoView video;
+    int i=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,17 +30,35 @@ public class HelpVideo extends AppCompatActivity {
         butnext=(Button)findViewById(R.id.btnnext);
         butfin=(Button)findViewById(R.id.btnfin);
         viewFlipper=(ViewFlipper)findViewById(R.id.viewflipper);
+        video=(VideoView)findViewById(R.id.v2);
+        video.setVideoURI(Uri.parse("android.resource://"+this.getPackageName()+"/"+R.raw.guide01));
 
 
         butpre.setOnClickListener(new View.OnClickListener(){
            public void onClick(View v){
-               viewFlipper.showPrevious();
+
+               i--;
+               if(i>=0) {
+                   viewFlipper.showPrevious();
+               }
+               if(i<0)i=0;
+
            }
         });
 
         butnext.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
-                viewFlipper.showNext();
+
+                i++;
+                if(i<=5) {
+                    viewFlipper.showNext();
+                    if (i == 5) {
+                        video.resume();
+                        video.start();
+                    }//video.stopPlayback();
+                }
+
+                if (i>5)i=5;
             }
         });
 
@@ -47,6 +67,7 @@ public class HelpVideo extends AppCompatActivity {
             public void onClick(View view) {
                 viewFlipper.stopFlipping();
                 settingsManager.setFirstTime();
+                video.stopPlayback();
                 finish();
 
             }

@@ -17,23 +17,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Button"
+        android:text="main화면에 대한 설명"
         android:id="@+id/bt1"
         ></Button>
 
 
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="700dp"
-        android:layout_weight="1"
-        android:src="@drawable/exp1"
-        android:id="@+id/image1"></ImageView>
+        <ImageView
+            android:id="@+id/image1"
+            android:layout_width="wrap_content"
+            android:layout_height="700dp"
+            android:layout_weight="1"
+            android:src="@drawable/help01"></ImageView>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:text="@string/help_of_home"
             android:id="@+id/text1"></TextView>
 
     <Button
@@ -41,7 +41,119 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Button" ></Button>
+        android:text="메인 메뉴 화면" ></Button>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="700dp"
+            android:layout_weight="1"
+            android:src="@drawable/help02"
+            android:id="@+id/image2"></ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/help_of_homemenu"
+            android:id="@+id/text2"></TextView>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="카드 화면"
+            android:id="@+id/bt3"></Button>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="700dp"
+            android:layout_weight="1"
+            android:src="@drawable/help03"
+            android:id="@+id/image3"></ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/help_of_card"
+            android:id="@+id/text3"></TextView>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="카드 메뉴 화면"
+            android:id="@+id/bt4"></Button>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="700dp"
+            android:layout_weight="1"
+            android:src="@drawable/help04"
+            android:id="@+id/image4"></ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/help_of_cardmenu"
+            android:id="@+id/text4"></TextView>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="알림 설정 화면"
+            android:id="@+id/bt5"></Button>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="700dp"
+            android:layout_weight="1"
+            android:src="@drawable/help05"
+            android:id="@+id/image5"></ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/help_of_alarm"
+            android:id="@+id/text5"></TextView>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="알림 편집 화면"
+            android:id="@+id/bt6"></Button>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="700dp"
+            android:layout_weight="1"
+            android:src="@drawable/help06"
+            android:id="@+id/image6"></ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/help_of_alarm2"
+            android:id="@+id/text6"></TextView>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="사용 영상"
+            android:id="@+id/bt7"></Button>
+
+        <VideoView
+            android:layout_width="match_parent"
+            android:layout_height="700dp"
+            android:layout_weight="1"
+            android:id="@+id/v1"></VideoView>
+
     </LinearLayout>
 
 </ScrollView>
